@@ -1,15 +1,12 @@
-import SpotifyService from '../../services/SpotifyService';
+import AlbumService from '../../services/AlbumService';
 import { Row, Col, Card } from 'react-bootstrap';
-function AlbumList(props) {
+function Album(props) {
     
-    const items = SpotifyService(props);
+    const item = AlbumService(props);
     
     
-
-    console.log(items);
     return (          
-        <Row xs={5} md={5} className="g-4">
-            {items.map(item => (
+        
             <Col>
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={item.images[1].url} />
@@ -21,8 +18,8 @@ function AlbumList(props) {
                     </Card.Body>
                 </Card>
             </Col>
-            ))}
-        </Row>)
+    
+        )
         ;
 
 
@@ -30,4 +27,4 @@ function AlbumList(props) {
 }
 
 
-export default AlbumList;
+export default Album;
